@@ -5,6 +5,5 @@ README
 lib/AnyEvent/STOMP.pm
 t/00-load.t
 t/manifest.t
-t/pod-coverage.t
 t/pod.t
 META.yml                                 Module meta-data (added by MakeMaker)
