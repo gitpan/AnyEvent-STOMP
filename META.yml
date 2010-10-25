@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               AnyEvent-STOMP
-version:            0.01
+version:            0.11
 abstract:           A lightweight event-driven STOMP client
 author:
     - Michael S. Fischer <michael+cpan@dynamine.net>
