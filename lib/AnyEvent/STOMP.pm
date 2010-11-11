@@ -8,7 +8,7 @@ use Carp qw(croak confess);
 use AnyEvent;
 use AnyEvent::Handle;
 
-our $VERSION = 0.2;
+our $VERSION = 0.3;
 
 =head1 NAME
 
@@ -118,6 +118,7 @@ sub connect {
     $self->{handle} = AnyEvent::Handle->new(
         connect => [ $host, $port ],
         tls => $ssl ? "connect" : undef,
+        keepalive => 1,
         on_connect => sub { 
             $self->send_frame("CONNECT", undef, $connect_headers);
             if ($destination) {
