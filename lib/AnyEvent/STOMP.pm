@@ -8,7 +8,7 @@ use Carp qw(croak);
 use AnyEvent;
 use AnyEvent::Handle;
 
-our $VERSION = 0.5;
+our $VERSION = 0.6;
 
 =head1 NAME
 
@@ -139,7 +139,7 @@ sub connect {
             $self->event('connect_error', $_[1]);
         },
         on_error => sub {
-            $self->unreg_cb($connect_cb);
+            $self->unreg_cb($connect_cb) if (defined $connect_cb);
             $self->{handle}->destroy;
             $self->event('io_error', $_[2]);
         },
