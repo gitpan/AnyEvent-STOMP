@@ -1,5 +1,19 @@
 Revision history for AnyEvent-STOMP:
 
+0.7     Mon Jan 13 09:56:22 EST 2014
+        - Ownership taken over by Fulko Hew.
+        - Added a backwards compatible 'content-length' option.  It facilitates
+          indirect control over ActiveMQ/JMS text/byte message control. See:
+          'Working with JMS Text/Bytes Messages and Stomp' in
+          http://activemq.apache.org/stomp.html
+        - Since empty headers are now feasible, it now handles sending messages
+          with no headers.
+        - BUGFIX: The DESTROY() function was not being invoked when objects
+          went out of scope because its handle->fh contained a reference
+          to the original object (causing a circular reference).  A new
+          mandatory destroy() method now exists to facilitate a proper
+          cleanup avoiding the related memory leak.
+
 0.6     Sat Apr 16 11:36:03 PDT 2011
         - BUGFIX: Only unregister connect callback in error handler 
           if one was specified.  (Thanks to Dexter Tad-y for the fix.)

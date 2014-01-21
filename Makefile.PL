@@ -4,7 +4,10 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME                => 'AnyEvent::STOMP',
-    AUTHOR              => q{Michael S. Fischer <michael+cpan@dynamine.net>},
+    AUTHOR              =>	[
+							q{Fulko Hew <fulko.hew@gmail.com},
+							q{Michael S. Fischer <michael+cpan@dynamine.net>},
+							],
     VERSION_FROM        => 'lib/AnyEvent/STOMP.pm',
     ABSTRACT_FROM       => 'lib/AnyEvent/STOMP.pm',
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
